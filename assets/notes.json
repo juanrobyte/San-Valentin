@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "Cena con tus padres",
+      "date": "🍽️",
+      "type": "image",
+      "src": "./assets/photos/cena-con-tus-padres.jpg",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Nuestro comienzo",
+      "date": "💘",
+      "type": "image",
+      "src": "./assets/photos/nuestro-comienzo.PNG",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Por fin juntos",
+      "date": "🫶",
+      "type": "image",
+      "src": "./assets/photos/por-fin-juntos.jpg",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tu sonrisa",
+      "date": "✨",
+      "type": "image",
+      "src": "./assets/photos/tu-sonrisa.JPG",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Vacaciones Higuerote",
+      "date": "🏖️",
+      "type": "image",
+      "src": "./assets/photos/vacaciones-higuerote.jpg",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Bailcito divertido",
+      "date": "🎬",
+      "type": "video",
+      "src": "./assets/photos/bailecito-divertido.mp4",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Y yo a ti",
+      "date": "🎥",
+      "type": "video",
+      "src": "./assets/photos/y-yo-a-ti.mp4",
+      "note": "TU TEXTO",
+      "sign": "— Diego"
+    }
+  ]
+}

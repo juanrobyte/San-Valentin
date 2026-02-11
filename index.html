@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álbum 💘</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <h1>Álbum de Polaroids 💘</h1>
+        <p class="sub">Toca una foto: se agranda y aparece su nota.</p>
+      </div>
+      <div class="hint">Tip: toca afuera para cerrar ✨</div>
+    </header>
+
+    <main>
+      <div id="grid" class="grid"></div>
+    </main>
+
+    <footer class="foot">Hecho con amor. — Diego</footer>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <button id="modalClose" class="modal-close" type="button" aria-label="Cerrar">✕</button>
+
+    <div class="modal-bg" id="modalBg"></div>
+
+    <div class="modal-panel">
+      <div class="modal-head">
+        <div class="modal-preview" id="modalPreview"></div>
+        <div class="modal-meta">
+          <div class="modal-title" id="modalTitle"></div>
+          <div class="modal-date" id="modalDate"></div>
+        </div>
+      </div>
+
+      <div class="modal-note">
+        <p id="modalNote"></p>
+        <div class="modal-sign" id="modalSign"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
