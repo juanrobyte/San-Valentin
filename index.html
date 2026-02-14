@@ -1,26 +1,43 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álbum 💘</title>
   <link rel="stylesheet" href="./assets/styles.css" />
 </head>
+
 <body>
-  <div class="wrap">
-    <header class="top">
-      <div>
-        <h1>Álbum de Polaroids 💘</h1>
-        <p class="sub">Toca una foto: se agranda y aparece su nota.</p>
+  <div id="valentineIntro" class="valentine-intro">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="heart" id="openAlbum">❤️</div>
+    </div>
+    <p class="intro-text">Feliz Día del amor mi vida bella, espero que te guste mi detallito.</br>
+      Toca el corazón 💘</p>
+  </div>
+  <div id="albumContent" style="display:none;">
+    <div class="wrap">
+      <div class="music-ui" id="musicUI" style="display:none;">
+        <button class="music-btn" id="musicMute" type="button" aria-label="Mute">🔊</button>
+        <input class="music-vol" id="musicVol" type="range" min="0" max="1" step="0.01" value="0.6" />
       </div>
-      <div class="hint">Tip: toca afuera para cerrar ✨</div>
-    </header>
 
-    <main>
-      <div id="grid" class="grid"></div>
-    </main>
+      <header class="top">
+        <div>
+          <h1>Álbum de Recuerditos 💘</h1>
+          <p>Un pequeño viaje por nuestros momentos juntos</p>
+        </div>
+        <div class="hint">Tip: Presiona las fotos y toca afuera para cerrar ✨</div>
+      </header>
 
-    <footer class="foot">Hecho con amor. — Diego</footer>
+      <main>
+        <div id="grid" class="grid"></div>
+      </main>
+
+      <footer class="foot">Hecho con amor. — Diego</footer>
+    </div>
   </div>
 
   <!-- Overlay -->
@@ -47,7 +64,8 @@
       </div>
     </div>
   </div>
-
+  <audio id="bgMusic" src="./assets/photos/Die For You - The Weeknd.mp3"></audio>
   <script src="./assets/app.js"></script>
 </body>
+
 </html>

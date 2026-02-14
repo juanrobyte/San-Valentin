@@ -1,59 +1,107 @@
 {
   "items": [
     {
-      "title": "Cena con tus padres",
-      "date": "🍽️",
+      "title": "Nuestro comienzo",
+      "date": "28/02/2025 💘",
       "type": "image",
-      "src": "./assets/photos/cena-con-tus-padres.jpg",
-      "note": "TU TEXTO",
+      "src": "./assets/photos/nuestro-comienzo.PNG",
+      "note": "Quien iba a pensar que ese día surgiría algo tan increíble entre nosotros. ✨",
       "sign": "— Diego"
     },
     {
-      "title": "Nuestro comienzo",
-      "date": "💘",
+      "title": "Mi audio favorito 🎶",
+      "date": "06/03/2025 🎥",
+      "type": "video",
+      "src": "./assets/photos/y-yo-a-ti.mp4",
+      "note": "Este audio para mi fue increible, tanto que me inspiró a escribirte una canción que tengo guardada en mis notas, y espero que un día la pena no me consuma y pueda cantártela. 🎤",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Conociendo a tus padres",
+      "date": "20/12/2025 🍽️",
       "type": "image",
-      "src": "./assets/photos/nuestro-comienzo.PNG",
-      "note": "TU TEXTO",
+      "src": "./assets/photos/cena-con-tus-padres.jpg",
+      "note": "Este día fue tan especial para mí, no solo porque pude compartir una momento especial con tus padres, sino porque sentí que realmente me aceptaron como parte de tu vida. Fue un momento lleno de alegría y amor, y me hizo sentir aún más conectado contigo. Gracias por permitirme ser parte de tu mundo y por compartir momentos tan significativos juntos. ❤️",
       "sign": "— Diego"
     },
     {
       "title": "Por fin juntos",
-      "date": "🫶",
+      "date": "20/12/2025 🫶",
       "type": "image",
       "src": "./assets/photos/por-fin-juntos.jpg",
-      "note": "TU TEXTO",
+      "note": "Esta no fue realmente nuestra primera foto juntos, pero es un momento que siempre recordaré con cariño. Fue el día en que finalmente pudimos estar juntos después de tanto tiempo de espera y anticipación. La emoción de ese momento fue indescriptible, y cada vez que veo esta foto, me recuerda lo afortunado que soy de tenerte a mi lado. Gracias por hacer realidad este sueño y por compartir tu vida conmigo. ❤️",
       "sign": "— Diego"
     },
     {
-      "title": "Tu sonrisa",
-      "date": "✨",
+      "title": "Tu sonrisa mi maravilla favorita",
+      "date": "06/05/2025 ✨",
       "type": "image",
       "src": "./assets/photos/tu-sonrisa.JPG",
-      "note": "TU TEXTO",
+      "note": "Esa maravillosa sonrisa tuya es mi vista favorita, y cada vez que la veo, me llena de alegría y amor. Es un recordatorio constante de lo afortunado que soy de tenerte en mi vida. Gracias por compartir esa sonrisa conmigo y por hacer que cada día sea más brillante con tu presencia. ❤️",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tú y yo en La Guaira",
+      "date": "29/11/2025 🌊",
+      "type": "image",
+      "src": "./assets/photos/tu-y-yo.jpg",
+      "note": "Ese día que nos escapamos juntos a La Guaira fue muy lindo, a pesar de todo lo que sucedió, estar contigo para mí fue lo más importante, y cada vez que veo esta foto, me recuerda lo especial que fue ese momento para nosotros. Gracias por compartir esa aventura conmigo y por hacer que cada día sea una nueva experiencia llena de amor y felicidad. ❤️",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tú y yo",
+      "date": "29/11/2025 🌊",
+      "type": "image",
+      "src": "./assets/photos/tu-y-yo-la-guaira.png",
+      "note": "Mas fotos asi que me gustan mucho, al natural, sin filtros, sin poses, solo tú y yo disfrutando el momento juntos. Gracias por compartir esos momentos conmigo y por hacer que cada día sea una nueva aventura llena de amor y felicidad. ❤️",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tú y yo 😋",
+      "date": "29/11/2025 🌊",
+      "type": "image",
+      "src": "./assets/photos/tu-y-yo-la-guaira-2.png",
+      "note": "Mas fotos de ese día que me encantan, tus besos, tus abrazos, tu compañía, todo eso es lo que hace que cada momento contigo sea tan especial para mí. Gracias por compartir esos momentos conmigo y por hacer que cada día sea una nueva aventura llena de amor y felicidad. ❤️",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tú y yo en Navidad",
+      "date": "24/12/2025 🎄",
+      "type": "image",
+      "src": "./assets/photos/tu-y-yo-navidad.jpg",
+      "note": "Nuestra primera navidad juntos, un momento tan especial para compartir con la persona que mas amo. Gracias por hacer que esta navidad sea tan mágica y llena de amor. Espero que podamos seguir compartiendo muchas navidades juntos y creando recuerdos inolvidables. ❤️",
+      "sign": "— Diego"
+    },
+    {
+      "title": "Tú y yo 😘",
+      "date": "24/12/2025🎄",
+      "type": "image",
+      "src": "./assets/photos/tu-y-yo-navidad-2.png",
+      "note": "Para la proxima si me das mi beso donde es, te amo mucho",
       "sign": "— Diego"
     },
     {
       "title": "Vacaciones Higuerote",
-      "date": "🏖️",
+      "date": "30/12/2025 🏖️",
       "type": "image",
       "src": "./assets/photos/vacaciones-higuerote.jpg",
-      "note": "TU TEXTO",
+      "note": "VACACIONES EN FAMILIAAAAA, a pesar de revolú y el momento de tensión que se vivió, para mí lo más importante fue compartir ese momento contigo y con tu familia, y cada vez que veo esta foto, me recuerda lo especial que fue ese momento para nosotros. Gracias por compartir esa aventura conmigo y por hacer que cada día sea una nueva experiencia llena de amor y felicidad. ❤️",
       "sign": "— Diego"
     },
     {
-      "title": "Bailcito divertido",
-      "date": "🎬",
+      "title": "Nuestro primer TikTok 🕺",
+      "date": "30/12/2025 🎬",
       "type": "video",
       "src": "./assets/photos/bailecito-divertido.mp4",
-      "note": "TU TEXTO",
+      "note": "Quiero hacer mas tiktoks contigo, me encanta divertirme contigo y plasmar esos momentos para que queden guardados para siempre, y cuando seamos mas adultos podamos verlos y recordar lo felices que éramos en ese momento. P.D: Perdon por pizar a Roxy:(",
       "sign": "— Diego"
     },
-    {
-      "title": "Y yo a ti",
-      "date": "🎥",
-      "type": "video",
-      "src": "./assets/photos/y-yo-a-ti.mp4",
-      "note": "TU TEXTO",
+        {
+      "title": "Feliz Año Nuevo 2026 🎉",
+      "date": "31/12/2025 🎉",
+      "type": "image",
+      "src": "./assets/photos/año-nuevo.jpg",
+      "note": "Un nuevo año juntos, lleno de muchas aventuras, momentos felices y amor. Gracias por hacer que cada día sea especial y por compartir tu vida conmigo.❤️",
       "sign": "— Diego"
     }
   ]
