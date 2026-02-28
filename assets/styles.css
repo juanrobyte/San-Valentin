@@ -70,27 +70,25 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   overflow:hidden;
 }
 
-/* IMG thumb: SIEMPRE llena el alto */
+
 .thumb-img{
   width:100%;
   height:100%;
-  object-fit: cover;      /* cambia a 'contain' si prefieres ver TODO con barras */
+  object-fit: cover;     
   object-position: center;
   display:block;
   transform: scale(1.01);
 }
 
-/* VIDEO thumb: sin controles, limpio */
 .thumb-video{
   width:100%;
   height:100%;
   object-fit: cover;
   display:block;
-  pointer-events:none; /* para que al click abra el modal */
+  pointer-events:none;
   transform: scale(1.01);
 }
 
-/* play icon */
 .media.is-video::after{
   content:"▶";
   position:absolute;
@@ -127,7 +125,7 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
 }
 .overlay.show{opacity:1;pointer-events:auto}
 
-/* Modal */
+
 .modal{
   position:fixed;
   inset:0;
@@ -189,7 +187,7 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
 .modal-preview video{
   width:100%;
   height:100%;
-  object-fit: contain; /* aquí sí te muestro “todo” */
+  object-fit: contain;
   background: rgba(0,0,0,.25);
   display:block;
 }
@@ -240,15 +238,13 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   }
 }
 
-/* ====== OPEN CARD (polaroid zoom) ====== */
 
-/* Overlay: que se vean las cards detrás */
 .overlay{
-  background: rgba(0,0,0,.20);        /* antes .55 */
-  backdrop-filter: blur(14px);         /* blur fuerte pero deja ver */
+  background: rgba(0,0,0,.20); 
+  backdrop-filter: blur(14px); 
 }
 
-/* Cuando una polaroid está abierta */
+
 .polaroid.open{
   position: fixed;
   left: 50%;
@@ -259,12 +255,12 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   box-shadow: 0 30px 110px rgba(0,0,0,.70);
 }
 
-/* Hacemos la card un poquito más alta cuando abre */
+
 .polaroid.open .inner{
   aspect-ratio: 3 / 4;
 }
 
-/* Creamos un “modo lectura” encima del media */
+
 .polaroid .note-overlay{
   position:absolute;
   inset:0;
@@ -277,13 +273,12 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   transition: opacity .18s ease;
 }
 
-/* En open se activa */
+
 .polaroid.open .note-overlay{
   opacity:1;
   pointer-events:auto;
 }
 
-/* Capa blur sobre la imagen/video para que el texto se lea */
 .polaroid .note-overlay::before{
   content:"";
   position:absolute;
@@ -291,15 +286,14 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   background: rgba(0,0,0,.25);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  /* solo cubre el área del "media" visualmente */
 }
 
-/* Ajustamos: el overlay solo debe estar dentro del .media */
+
 .polaroid .media{
-  position:relative; /* ya lo tienes, lo reafirmo */
+  position:relative; 
 }
 
-/* Importante: limitamos blur a la media, no a toda la card */
+
 .polaroid .media .note-overlay{
   border-radius: 16px;
 }
@@ -307,7 +301,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   border-radius: 16px;
 }
 
-/* Caja de texto glass */
 .note-box{
   position:relative;
   border-radius: 16px;
@@ -320,7 +313,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   overflow:auto;
 }
 
-/* Scroll bonito */
 .note-box::-webkit-scrollbar{ width: 8px; }
 .note-box::-webkit-scrollbar-thumb{
   background: rgba(255,255,255,.18);
@@ -343,7 +335,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   font-size: 13px;
 }
 
-/* Título/fecha arriba (sobre la media) */
 .note-top{
   position:relative;
   display:flex;
@@ -357,12 +348,10 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
 .note-top b{ font-size: 16px; }
 .note-top span{ font-size: 13px; opacity:.8; }
 
-/* Evitar que el card abierto “salte” por hover */
 .polaroid.open:hover{
   transform: translate(-50%, -50%) rotate(0deg) !important;
 }
 
-/* ===== OPEN: 2 polaroids iguales ===== */
 .open-wrap{
   position: fixed;
   left: 50%;
@@ -382,24 +371,22 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   }
 }
 
-/* Las dos polaroids grandes */
 .open-wrap .polaroid{
   transform: rotate(0deg) !important;
   box-shadow: 0 30px 110px rgba(0,0,0,.70);
 }
 
 .open-wrap .inner{
-  aspect-ratio: 4 / 5; /* mismo tamaño para ambas */
+  aspect-ratio: 4 / 5; 
 }
 
-/* Media grande en el open */
+
 .open-wrap .thumb-img,
 .open-wrap .thumb-video{
-  object-fit: contain; /* aquí mostramos “todo” sin recortar */
+  object-fit: contain; 
   background: rgba(0,0,0,.25);
 }
 
-/* Texto card interno */
 .detail-text{
   height: 100%;
   display: flex;
@@ -445,7 +432,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   font-size: 13px;
 }
 
-/* Overlay: deja ver cards detrás */
 .overlay{
   background: rgba(0,0,0,.20);
   backdrop-filter: blur(14px);
@@ -505,10 +491,9 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   text-align: center;
 }
 
-/* ===== Close X para open-wrap (mobile) ===== */
 .open-close{
   position: absolute;
-  top: -54px;           /* queda “flotando” arriba del wrap */
+  top: -54px; 
   right: 0;
   width: 44px;
   height: 44px;
@@ -518,12 +503,11 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   color: rgba(255,255,255,.92);
   backdrop-filter: blur(12px);
   cursor: pointer;
-  display: none;        /* por defecto hidden */
+  display: none;  
   z-index: 80;
   font-size: 18px;
 }
 
-/* En móvil se muestra */
 @media (max-width: 860px){
   .open-wrap{
     position: fixed;
@@ -534,9 +518,9 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   }
 }
 
-/* ===== FIX MOBILE: open-wrap full-screen + scroll + close visible ===== */
+
 @media (max-width: 860px) {
-  /* El contenedor del "modal" ocupa toda la pantalla y permite scroll */
+
   .open-wrap{
     inset: 0;
     left: 0;
@@ -544,7 +528,7 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
     transform: none;
     width: 100%;
     height: 100dvh;
-    padding: 74px 14px 18px; /* espacio para la X y notch */
+    padding: 74px 14px 18px; 
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -555,19 +539,16 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
     justify-items: center;
   }
 
-  /* Las polaroids en mobile: ancho controlado y centradas */
   .open-wrap .polaroid{
     width: min(92vw, 540px);
   }
 
-  /* Para que no se sientan gigantes y quepa contenido */
   .open-wrap .inner{
-    aspect-ratio: 3 / 4; /* más compacto que 4/5 */
+    aspect-ratio: 3 / 4;
   }
 
-  /* La X siempre visible arriba a la derecha */
   .open-close{
-    position: fixed;   /* clave: no depende del open-wrap */
+    position: fixed;  
     top: 16px;
     right: 14px;
     display: grid;
@@ -608,7 +589,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   width: 130px;
 }
 
-/* ===== Close X para open-wrap ===== */
 .open-close{
   position: absolute;
   top: -54px;
@@ -626,7 +606,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   font-size: 18px;
 }
 
-/* ===== FIX MOBILE: open-wrap full-screen + scroll + close visible ===== */
 @media (max-width: 860px) {
   .open-wrap{
     inset: 0;
@@ -664,7 +643,6 @@ h1{margin:0;font-size:30px;letter-spacing:.2px}
   }
 }
 
-/* ===== Music UI ===== */
 .music-ui{
   position: fixed;
   left: 14px;
