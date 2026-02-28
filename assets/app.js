@@ -17,7 +17,6 @@ function escapeHtml(str) {
     .replaceAll("'", "&#039;");
 }
 
-// --------- media creators ----------
 function createThumbMedia(it, { large = false } = {}) {
   const type = (it.type || "image").toLowerCase();
 
@@ -28,9 +27,6 @@ function createThumbMedia(it, { large = false } = {}) {
     v.playsInline = true;
     v.preload = "metadata";
     v.loop = true;
-
-    // En grid: sin controles y sin interacción
-    // En open: con controles para verlo bien
     v.controls = !!large;
     v.muted = !large;
 
@@ -76,11 +72,9 @@ function createPolaroidBase({ tilt = "0deg" } = {}) {
   return { card, inner, media, caption };
 }
 
-// --------- open / close ----------
 function closeOpen() {
   if (!openWrap) return;
 
-  // pausa videos abiertos
   openWrap.querySelectorAll("video").forEach((v) => {
     try {
       v.pause();
@@ -103,7 +97,6 @@ function openTwoCards(it) {
   openWrap = document.createElement("div");
   openWrap.className = "open-wrap";
 
-  // Botón X (visible en mobile por CSS)
   const closeBtn = document.createElement("button");
   closeBtn.className = "open-close";
   closeBtn.type = "button";
@@ -115,7 +108,6 @@ function openTwoCards(it) {
   });
   openWrap.appendChild(closeBtn);
 
-  // --- Left: media polaroid ---
   const left = createPolaroidBase({ tilt: "0deg" });
   const leftMedia = createThumbMedia(it, { large: true });
 
@@ -127,7 +119,6 @@ function openTwoCards(it) {
     <span>${escapeHtml(it.date || "")}</span>
   `;
 
-  // --- Right: text polaroid ---
   const right = createPolaroidBase({ tilt: "0deg" });
 
   right.media.style.background = "transparent";
@@ -157,7 +148,6 @@ function openTwoCards(it) {
   openWrap.appendChild(right.card);
   document.body.appendChild(openWrap);
 
-  // auto-play del video al abrir (si el navegador lo permite)
   const v = openWrap.querySelector(".open-wrap video");
   if (v) v.play().catch(() => {});
 }
@@ -167,7 +157,6 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeOpen();
 });
 
-// --------- render grid ----------
 function renderGrid(items) {
   grid.innerHTML = "";
 
@@ -199,7 +188,6 @@ function renderGrid(items) {
   }
 })();
 
-// ========= VALENTINE + MUSIC (iOS/Android volume FIX) =========
 const openBtn = document.getElementById("openAlbum");
 const intro = document.getElementById("valentineIntro");
 const album = document.getElementById("albumContent");
@@ -209,7 +197,6 @@ const musicUI = document.getElementById("musicUI");
 const musicMute = document.getElementById("musicMute");
 const musicVol = document.getElementById("musicVol");
 
-// WebAudio para volumen real en iOS/Android
 let audioCtx = null;
 let gainNode = null;
 let sourceNode = null;
@@ -227,7 +214,6 @@ function ensureAudioGraph() {
     gainNode.gain.value = lastVol;
   }
 
-  // Importante: SOLO una vez
   if (!sourceNode) {
     sourceNode = audioCtx.createMediaElementSource(music);
     sourceNode.connect(gainNode);
@@ -244,14 +230,14 @@ async function tryPlayMusic() {
   if (!music) return;
 
   music.loop = true;
-  music.volume = 1; // volumen real lo controla gainNode
+  music.volume = 1;
 
   try {
     ensureAudioGraph();
     if (audioCtx?.state === "suspended") await audioCtx.resume();
     await music.play();
   } catch {
-    // autoplay bloqueado; se arregla con primer gesto
+    console.log("ocurrio un error")
   }
 }
 
@@ -274,7 +260,6 @@ function setGain(v) {
   setMuteUI();
 }
 
-// Click corazón
 if (openBtn) {
   openBtn.addEventListener("click", async () => {
     intro.style.opacity = "0";
@@ -291,14 +276,12 @@ if (openBtn) {
       }, 50);
     }, 1500);
 
-    // intenta sonar al abrir
     await tryPlayMusic();
     enableMusicOnFirstGesture();
 
-    // set volumen inicial
     ensureAudioGraph();
     if (audioCtx?.state === "suspended") {
-      // si iOS aún no permite, queda listo para el primer gesto
+        console.log('error)
     } else {
       setGain(Number(musicVol?.value ?? 0.6));
     }
@@ -306,7 +289,6 @@ if (openBtn) {
   });
 }
 
-// Mute (sin pausar)
 if (musicMute) {
   musicMute.addEventListener("click", async () => {
     ensureAudioGraph();
@@ -315,12 +297,11 @@ if (musicMute) {
     if (!gainNode) return;
 
     if (gainNode.gain.value === 0) {
-      // volver al último volumen (si era 0, usa 0.6)
+
       const back = lastVol > 0 ? lastVol : 0.6;
       gainNode.gain.value = back;
       if (musicVol) musicVol.value = String(back);
     } else {
-      // guardar el volumen antes de mutear
       lastVol = Number(musicVol?.value ?? gainNode.gain.value ?? 0.6);
       gainNode.gain.value = 0;
     }
@@ -330,7 +311,6 @@ if (musicMute) {
   });
 }
 
-// Volumen real (GainNode)
 if (musicVol) {
   musicVol.addEventListener("input", async () => {
     ensureAudioGraph();
@@ -339,7 +319,6 @@ if (musicVol) {
     const v = Number(musicVol.value);
     if (gainNode) gainNode.gain.value = v;
 
-    // si sube volumen, des-mutea
     if (v > 0) lastVol = v;
 
     setMuteUI();
@@ -347,28 +326,20 @@ if (musicVol) {
   });
 }
 
-// =====================
-// HEART -> OPEN ALBUM
-// =====================
 function showAlbumWithTransition() {
   if (!intro || !album) return;
 
-  // fade out intro
   intro.style.opacity = "0";
+  
   intro.style.pointerEvents = "none";
-
   setTimeout(() => {
     intro.style.display = "none";
-
-    // show album
     album.style.display = "block";
     album.style.opacity = "0";
     album.style.transition = "opacity 2s ease";
-
     requestAnimationFrame(() => {
       album.style.opacity = "1";
     });
-
     if (musicUI) musicUI.style.display = "flex";
   }, 1200);
 }
@@ -383,14 +354,11 @@ function enableMusicOnFirstGesture() {
   window.addEventListener("touchstart", resume, { once: true });
 }
 
-// 🔥 ESTE era el evento que te faltaba
 if (openBtn) {
   openBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
     showAlbumWithTransition();
-
-    // iOS/Android: intenta play, si bloquea se habilita con el primer gesto igual
     await tryPlayMusic();
     enableMusicOnFirstGesture();
     setMuteUI();
